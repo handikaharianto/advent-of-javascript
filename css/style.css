@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@font-face {
+  font-family: 'bebas';
+  src: url("../fonts/bebasneue-book-webfont.woff") format("woff"), url("../fonts/bebasneue-book-webfont.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #2b2a30;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  position: relative;
+  width: 518px;
+  height: 518px;
+}
+
+.ring {
+  width: 518px;
+  height: 518px;
+  border: 10px solid #09a65a;
+  border-radius: 50%;
+  background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3a393f 0%, #17171a 100%);
+  -webkit-box-shadow: 16px -13px 50px -20px rgba(255, 255, 255, 0.15), -16px 13px 14px -3px rgba(0, 0, 0, 0.5), inset 0px 0px 114px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 16px -13px 50px -20px rgba(255, 255, 255, 0.15), -16px 13px 14px -3px rgba(0, 0, 0, 0.5), inset 0px 0px 114px 0px rgba(0, 0, 0, 0.5);
+}
+
+.timer {
+  position: absolute;
+  left: 50%;
+  top: 27%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+}
+
+.time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input[type='text'] {
+  width: 150px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-family: "bebas";
+  font-size: 12rem;
+  outline: none;
+  text-align: center;
+}
+
+.separator {
+  color: #fff;
+  font-family: "bebas";
+  font-size: 12rem;
+}
+
+.btn {
+  display: block;
+  border: transparent;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn-start, .btn-stop {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  opacity: 0.6;
+}
+
+.btn-start.hide, .btn-stop.hide {
+  display: none;
+}
+
+.btn-setting {
+  margin-top: 2em;
+  opacity: 0.4;
+}
