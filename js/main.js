@@ -4,8 +4,10 @@
 
 const startBtn = document.querySelector('.btn-start');
 const stopBtn = document.querySelector('.btn-stop');
+const settingBtn = document.querySelector('.btn-setting');
 const minuteInput = document.querySelector('.minute-input');
 const secondInput = document.querySelector('.second-input');
+const ring = document.querySelector('.ring');
 
 /**
  * Variables
@@ -19,14 +21,16 @@ let timeIntervalId;
 
 startBtn.addEventListener('click', startTimer);
 stopBtn.addEventListener('click', stopTimer);
+settingBtn.addEventListener('click', editTimer);
 
 /**
  * Functions
  */
 
 function startTimer() {
-  startBtn.classList.toggle('hide');
-  stopBtn.classList.toggle('hide');
+  startBtn.classList.add('hide');
+  stopBtn.classList.remove('hide');
+  ring.classList.add('start');
 
   // start the timer
   timeIntervalId = setInterval(function () {
@@ -51,9 +55,17 @@ function startTimer() {
 }
 
 function stopTimer() {
-  startBtn.classList.toggle('hide');
-  stopBtn.classList.toggle('hide');
+  startBtn.classList.remove('hide');
+  stopBtn.classList.add('hide');
+  ring.classList.remove('start');
 
   clearInterval(timeIntervalId);
   timeIntervalId = null;
+}
+
+function editTimer() {
+  if (!startBtn.classList.contains('hide')) {
+    minuteInput.disabled = false;
+    secondInput.disabled = false;
+  }
 }

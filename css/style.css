@@ -40,11 +40,17 @@ main {
 .ring {
   width: 518px;
   height: 518px;
-  border: 10px solid #09a65a;
+  border: 12px solid #900a0a;
   border-radius: 50%;
   background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3a393f 0%, #17171a 100%);
-  -webkit-box-shadow: 16px -13px 50px -20px rgba(255, 255, 255, 0.15), -16px 13px 14px -3px rgba(0, 0, 0, 0.5), inset 0px 0px 114px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 16px -13px 50px -20px rgba(255, 255, 255, 0.15), -16px 13px 14px -3px rgba(0, 0, 0, 0.5), inset 0px 0px 114px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 0px 114px 0px rgba(0, 0, 0, 0.45), -5px 14px 44px black, 5px -16px 50px rgba(255, 255, 255, 0.15);
+          box-shadow: inset 0px 0px 114px 0px rgba(0, 0, 0, 0.45), -5px 14px 44px black, 5px -16px 50px rgba(255, 255, 255, 0.15);
+  -webkit-transition: border 0.5s linear;
+  transition: border 0.5s linear;
+}
+
+.ring.start {
+  border-color: #09a65a;
 }
 
 .timer {
@@ -69,13 +75,18 @@ main {
 
 input[type='text'] {
   width: 150px;
-  border: none;
+  height: 150px;
+  border-width: 0 0 2px 0;
   background-color: transparent;
   color: #fff;
   font-family: "bebas";
   font-size: 12rem;
   outline: none;
   text-align: center;
+}
+
+input[type='text']:disabled {
+  border: 1px solid transparent;
 }
 
 .separator {
