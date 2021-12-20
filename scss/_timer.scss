@@ -37,7 +37,7 @@ main {
   align-items: center;
 }
 
-input[type='text'] {
+input[type='number'] {
   width: 150px;
   height: 150px;
   border-width: 0 0 2px 0;
@@ -48,9 +48,19 @@ input[type='text'] {
   outline: none;
   text-align: center;
 
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
   &:disabled {
     border: 1px solid transparent;
   }
+}
+
+input[matinput][type='number'] {
+  -moz-appearance: textfield;
 }
 
 .separator {

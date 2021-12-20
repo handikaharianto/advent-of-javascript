@@ -73,7 +73,7 @@ main {
           align-items: center;
 }
 
-input[type='text'] {
+input[type='number'] {
   width: 150px;
   height: 150px;
   border-width: 0 0 2px 0;
@@ -85,8 +85,18 @@ input[type='text'] {
   text-align: center;
 }
 
-input[type='text']:disabled {
+input[type='number']::-webkit-outer-spin-button, input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+input[type='number']:disabled {
   border: 1px solid transparent;
+}
+
+input[matinput][type='number'] {
+  -moz-appearance: textfield;
 }
 
 .separator {

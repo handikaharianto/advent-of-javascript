@@ -14,6 +14,7 @@ const ring = document.querySelector('.ring');
  */
 
 let timeIntervalId;
+let isEditTimer = false;
 
 /**
  * Event Listeners
@@ -44,6 +45,10 @@ function startTimer() {
       // add leading zero for 0-9
       minuteInput.value = ('0' + (minutes - 1)).slice(-2);
     } else {
+      startBtn.classList.remove('hide');
+      stopBtn.classList.add('hide');
+      ring.classList.remove('start');
+
       // clear interval
       clearInterval(timeIntervalId);
       timeIntervalId = null;
@@ -59,13 +64,23 @@ function stopTimer() {
   stopBtn.classList.add('hide');
   ring.classList.remove('start');
 
+  // stop timer
   clearInterval(timeIntervalId);
   timeIntervalId = null;
 }
 
 function editTimer() {
-  if (!startBtn.classList.contains('hide')) {
+  // prevent edit when timer has started
+  if (startBtn.classList.contains('hide')) {
+    return;
+  }
+
+  isEditTimer = !isEditTimer;
+  if (isEditTimer) {
     minuteInput.disabled = false;
     secondInput.disabled = false;
+  } else {
+    minuteInput.disabled = true;
+    secondInput.disabled = true;
   }
 }
